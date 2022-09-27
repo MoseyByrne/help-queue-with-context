@@ -103,6 +103,8 @@ class TicketControl extends React.Component {
       color: theme.textColor, 
     }
 
+    console.log(theme.buttonBackground);
+
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.editing) {
@@ -125,7 +127,7 @@ class TicketControl extends React.Component {
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        <button style={buttonStyles} onClick={this.handleClick}>{buttonText}</button>
+        <button style={buttonStyles} onClick={this.handleClick}>{buttonText}</button> 
       </React.Fragment>
     );
   }
