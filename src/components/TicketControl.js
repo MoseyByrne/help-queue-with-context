@@ -97,13 +97,17 @@ class TicketControl extends React.Component {
     // We access the context value.
     let theme = this.context;
 
+    if (!theme) {
+      throw new Error("ThemeContext must be used within a ThemeContext.Provider!");
+    }
+
     // We create our button styles.
     const buttonStyles = { 
       backgroundColor: theme.buttonBackground, 
       color: theme.textColor, 
     }
 
-    console.log(theme.buttonBackground);
+    console.log("Theme button background: " +theme.buttonBackground);
 
     let currentlyVisibleState = null;
     let buttonText = null;
